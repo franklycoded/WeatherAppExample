@@ -37,5 +37,14 @@ namespace WeatherForecast.DataService.Configuration
                 return this["urlTemplate"].ToString();
             }
         }
+
+        [ConfigurationProperty("iconPathTemplate", IsRequired = true)]
+        public string IconPathTemplate
+        {
+            get
+            {
+                return this["iconPathTemplate"].ToString();
+            }
+        }
     }
 }

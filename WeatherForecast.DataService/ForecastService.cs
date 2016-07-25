@@ -61,7 +61,7 @@ namespace WeatherForecast.DataService
                         {
                             Date = date,
                             DayName = date.DayOfWeek.ToString(),
-                            IconPath = forecast.weather[0].icon,
+                            IconPath = string.Format(dataServiceConfiguration.IconPathTemplate, forecast.weather[0].icon),
                             MiddayTemperature = forecast.main.temp_max,
                             ShortDescription = forecast.weather[0].description
                         });

@@ -6,13 +6,18 @@
     public interface IDataServiceConfiguration
     {
         /// <summary>
-        /// Gets or sets the api key
+        /// Gets the api key
         /// </summary>
         string ApiKey { get; }
 
         /// <summary>
-        /// Gets or sets the url template
+        /// Gets the url template
         /// </summary>
         string UrlTemplate { get; }
+
+        /// <summary>
+        /// Gets the icon path template
+        /// </summary>
+        string IconPathTemplate { get; }
     }
 }
