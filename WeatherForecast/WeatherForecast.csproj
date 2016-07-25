@@ -278,7 +278,10 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
-    <Content Include="package.json" />
+    <Content Include="WebUI\app\weatherMain\weatherMain.html" />
+    <Content Include="WebUI\app\weatherMain\weatherMain.js" />
+    <Content Include="WebUI\gulpfile.js" />
+    <Content Include="WebUI\package.json" />
     <Content Include="WebUI\app\app.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

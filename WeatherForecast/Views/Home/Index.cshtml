@@ -5,7 +5,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html ng-app="WeatherApp">
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>index</title>
@@ -14,10 +14,15 @@
     <div>
         test content
     </div>
+    <div ng-controller="WeatherMainController">
+        <span>City:</span>
+        <input type="text" id="citySearch" ng-model="cityName" />
+        <button ng-click="getForecast()">Get Forecast</button>
+    </div>
 
-    @section scripts {
-        @Scripts.Render("~/WebUI/shared/scripts/angular.js")
-        @Scripts.Render("~/WebUI/app/app.js")
-    }
+
+    @Scripts.Render("~/WebUI/app/shared/scripts/angular.min.js")
+    @Scripts.Render("~/WebUI/app/app.js")
+    @Scripts.Render("~/WebUI/app/weatherMain/weatherMain.js")
 </body>
 </html>
