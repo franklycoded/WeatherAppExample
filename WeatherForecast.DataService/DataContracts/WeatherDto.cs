@@ -1,16 +1,18 @@
-﻿using System.Runtime.Serialization;
+﻿using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 namespace WeatherForecast.DataService.DataContracts
 {
     [DataContract]
     public class WeatherDto
     {
-        public WeatherDto(string icon)
-        {
-            this.Icon = icon;
-        }
+        [DataMember]
+        public string Country { get; set; }
 
         [DataMember]
-        public string Icon { get; private set; }
+        public string City { get; set; }
+
+        [DataMember]
+        public List<DailyWeatherDto> DailyWeatherList { get; set; }
     }
 }

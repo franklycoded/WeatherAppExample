@@ -4,6 +4,8 @@ using System.Net.Http;
 using WeatherForecast.DataService.Configuration;
 using WeatherForecast.DataService.ExternalDataContract;
 using WeatherForecast.DataService.DataContracts;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace WeatherForecast.DataService
 {
@@ -45,10 +47,30 @@ namespace WeatherForecast.DataService
                 {
                     var jsonString = result.Content.ReadAsStringAsync().Result;
                     var weatherData = JsonConvert.DeserializeObject<RootObject>(jsonString);
-                    return new WeatherDto(weatherData.list[0].weather[0].icon);
+
+                    var weatherResult = new WeatherDto();
+                    weatherResult.City = weatherData.city.name;
+                    weatherResult.Country = weatherData.city.country;
+                    weatherResult.DailyWeatherList = new List<DailyWeatherDto>();
+
+                    foreach (var forecast in weatherData.list.Where(l => DateTime.Parse(l.dt_txt).Hour == 12).OrderBy(l => l.dt))
+                    {
+                        var date = DateTime.Parse(forecast.dt_txt);
+
+                        weatherResult.DailyWeatherList.Add(new DailyWeatherDto()
+                        {
+                            Date = date,
+                            DayName = date.DayOfWeek.ToString(),
+                            IconPath = forecast.weather[0].icon,
+                            MiddayTemperature = forecast.main.temp_max,
+                            ShortDescription = forecast.weather[0].description
+                        });
+                    }
+
+                    return weatherResult;
                 }
 
-                return new WeatherDto("nope");
+                return new WeatherDto();
             }
         }
     }

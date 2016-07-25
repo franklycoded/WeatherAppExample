@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Configuration\DataServiceConfiguration.cs" />
     <Compile Include="Configuration\IDataServiceConfiguration.cs" />
+    <Compile Include="DataContracts\DailyWeatherDto.cs" />
     <Compile Include="DataContracts\WeatherDto.cs" />
     <Compile Include="ForecastService.cs" />
     <Compile Include="ExternalDataContract\ForecastServiceDataContract.cs" />
