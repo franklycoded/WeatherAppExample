@@ -12,8 +12,7 @@
 </head>
 <body>
     <div ng-controller="WeatherMainController">
-        <span>City:</span>
-        <input type="text" id="citySearch" ng-model="cityName" />
+        <input type="text" id="citySearch" maxlength="50" placeholder="City" ng-model="cityName" />
         <button ng-click="getForecast()">Get Forecast</button>
 
         <div ng-repeat="dailyForecast in weatherData.dailyWeatherList">
