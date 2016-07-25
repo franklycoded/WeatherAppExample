@@ -278,6 +278,8 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="WebUI\app\directives\dailyForecast\dailyForecast.html" />
+    <Content Include="WebUI\app\directives\dailyForecast\dailyForecast.js" />
     <Content Include="WebUI\app\services\forecastService.js" />
     <Content Include="WebUI\app\weatherMain\weatherMain.html" />
     <Content Include="WebUI\app\weatherMain\weatherMain.js" />

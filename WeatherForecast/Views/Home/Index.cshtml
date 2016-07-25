@@ -11,19 +11,20 @@
     <title>index</title>
 </head>
 <body>
-    <div>
-        test content
-    </div>
     <div ng-controller="WeatherMainController">
         <span>City:</span>
         <input type="text" id="citySearch" ng-model="cityName" />
         <button ng-click="getForecast()">Get Forecast</button>
-    </div>
 
+        <div ng-repeat="dailyForecast in weatherData.dailyWeatherList">
+            <daily-forecast forecast="dailyForecast"></daily-forecast>
+        </div>
+    </div>
 
     @Scripts.Render("~/WebUI/app/shared/scripts/angular.min.js")
     @Scripts.Render("~/WebUI/app/app.js")
     @Scripts.Render("~/WebUI/app/services/forecastService.js")
     @Scripts.Render("~/WebUI/app/weatherMain/weatherMain.js")
+    @Scripts.Render("~/WebUI/app/directives/dailyForecast/dailyForecast.js")
 </body>
 </html>
