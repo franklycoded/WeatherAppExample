@@ -2,7 +2,6 @@
 using System;
 using System.Net.Http;
 using WeatherForecast.DataService.Configuration;
-using WeatherForecast.DataService.ExternalDataContract;
 using WeatherForecast.DataService.DataContracts;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,32 +35,32 @@ namespace WeatherForecast.DataService
             {
                 var result = httpClient.GetAsync(string.Format(dataServiceConfiguration.UrlTemplate, city, dataServiceConfiguration.ApiKey)).Result;
 
-                if (result.IsSuccessStatusCode)
-                {
-                    var jsonString = result.Content.ReadAsStringAsync().Result;
-                    var weatherData = JsonConvert.DeserializeObject<RootObject>(jsonString);
+                //if (result.IsSuccessStatusCode)
+                //{
+                //    var jsonString = result.Content.ReadAsStringAsync().Result;
+                //    var weatherData = JsonConvert.DeserializeObject<RootObject>(jsonString);
 
-                    var weatherResult = new WeatherDto();
-                    weatherResult.City = weatherData.city.name;
-                    weatherResult.Country = weatherData.city.country;
-                    weatherResult.DailyWeatherList = new List<DailyWeatherDto>();
+                //    var weatherResult = new WeatherDto();
+                //    weatherResult.City = weatherData.city.name;
+                //    weatherResult.Country = weatherData.city.country;
+                //    weatherResult.DailyWeatherList = new List<DailyWeatherDto>();
 
-                    foreach (var forecast in weatherData.list.Where(l => DateTime.Parse(l.dt_txt).Hour == 12).OrderBy(l => l.dt))
-                    {
-                        var date = DateTime.Parse(forecast.dt_txt);
+                //    foreach (var forecast in weatherData.list.Where(l => DateTime.Parse(l.dt_txt).Hour == 12).OrderBy(l => l.dt))
+                //    {
+                //        var date = DateTime.Parse(forecast.dt_txt);
 
-                        weatherResult.DailyWeatherList.Add(new DailyWeatherDto()
-                        {
-                            Date = date,
-                            DayName = date.DayOfWeek.ToString(),
-                            IconPath = string.Format(dataServiceConfiguration.IconPathTemplate, forecast.weather[0].icon),
-                            MiddayTemperature = forecast.main.temp_max,
-                            ShortDescription = forecast.weather[0].description
-                        });
-                    }
+                //        weatherResult.DailyWeatherList.Add(new DailyWeatherDto()
+                //        {
+                //            Date = date,
+                //            DayName = date.DayOfWeek.ToString(),
+                //            IconPath = string.Format(dataServiceConfiguration.IconPathTemplate, forecast.weather[0].icon),
+                //            MiddayTemperature = forecast.main.temp_max,
+                //            ShortDescription = forecast.weather[0].description
+                //        });
+                //    }
 
-                    return weatherResult;
-                }
+                //    return weatherResult;
+                //}
 
                 return new WeatherDto();
             }

@@ -50,8 +50,10 @@
     <Compile Include="Configuration\IDataServiceConfiguration.cs" />
     <Compile Include="DataContracts\DailyWeatherDto.cs" />
     <Compile Include="DataContracts\WeatherDto.cs" />
+    <Compile Include="External\ExternalApiService.cs" />
+    <Compile Include="External\IExternalApiService.cs" />
     <Compile Include="ForecastService.cs" />
-    <Compile Include="ExternalDataContract\ForecastServiceDataContract.cs" />
+    <Compile Include="External\ExternalForecastDto.cs" />
     <Compile Include="IForecastService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -59,6 +61,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

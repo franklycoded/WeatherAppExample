@@ -2,7 +2,7 @@
 
 using System.Collections.Generic;
 
-namespace WeatherForecast.DataService.ExternalDataContract
+namespace WeatherForecast.DataService.External
 {
     public class Coord
     {
@@ -78,7 +78,7 @@ namespace WeatherForecast.DataService.ExternalDataContract
         public string dt_txt { get; set; }
     }
 
-    public class RootObject
+    public class ExternalForecastDto
     {
         public City city { get; set; }
         public string cod { get; set; }
