@@ -5,7 +5,7 @@ weatherApp.factory('forecastService', ['$http', function ($http) {
     };
 
     function getForecast(cityName) {
-        return $http.get('/api/forecast/uk/' + cityName);
+        return $http.get('/api/forecast/' + cityName);
     }
 
     return service;

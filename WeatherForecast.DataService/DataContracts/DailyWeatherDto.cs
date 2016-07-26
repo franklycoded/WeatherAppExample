@@ -3,6 +3,9 @@ using System.Runtime.Serialization;
 
 namespace WeatherForecast.DataService.DataContracts
 {
+    /// <summary>
+    /// Dto that represents the weather each day
+    /// </summary>
     [DataContract]
     public class DailyWeatherDto
     {

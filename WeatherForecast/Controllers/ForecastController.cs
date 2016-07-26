@@ -18,10 +18,10 @@ namespace WeatherForecast.Controllers
         }
 
         [HttpGet]
-        [Route("{country}/{city}")]
-        public WeatherDto GetForecast(string country, string city)
+        [Route("{city}")]
+        public WeatherDto GetForecast(string city)
         {
-            return _forecastService.GetForecast(city, country);
+            return _forecastService.GetForecast(city);
         }
     }
 }

@@ -8,6 +8,10 @@ namespace WeatherForecast.DataService.Configuration
     /// </summary>
     public class DataServiceConfiguration : ConfigurationSection, IDataServiceConfiguration
     {
+        /// <summary>
+        /// Reads the data service configuration from the config file
+        /// </summary>
+        /// <returns>The data service configuration</returns>
         public static DataServiceConfiguration GetConfiguration()
         {
             var configuration =
@@ -20,6 +24,9 @@ namespace WeatherForecast.DataService.Configuration
             throw new Exception("Can't find section 'dataServiceConfiguration'");
         }
 
+        /// <summary>
+        /// <see cref="IDataServiceConfiguration.ApiKey" />
+        /// </summary>
         [ConfigurationProperty("apiKey", IsRequired = true)]
         public string ApiKey
         {
@@ -29,6 +36,9 @@ namespace WeatherForecast.DataService.Configuration
             }
         }
 
+        /// <summary>
+        /// <see cref="IDataServiceConfiguration.UrlTemplate" />
+        /// </summary>
         [ConfigurationProperty("urlTemplate", IsRequired = true)]
         public string UrlTemplate
         {
@@ -38,6 +48,9 @@ namespace WeatherForecast.DataService.Configuration
             }
         }
 
+        /// <summary>
+        /// <see cref="IDataServiceConfiguration.IconPathTemplate" />
+        /// </summary>
         [ConfigurationProperty("iconPathTemplate", IsRequired = true)]
         public string IconPathTemplate
         {

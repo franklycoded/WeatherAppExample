@@ -1,16 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WeatherForecast.DataService.DataContracts;
+﻿using WeatherForecast.DataService.DataContracts;
 
 namespace WeatherForecast.DataService
 {
+    /// <summary>
+    /// Service to request weather forecast for a specified city
+    /// </summary>
     public interface IForecastService
     {
-        string GetData();
-
-        WeatherDto GetForecast(string city, string country);
+        /// <summary>
+        /// Gets the forecast for the given city
+        /// </summary>
+        /// <param name="city">The city we are interested in</param>
+        /// <returns>The multi-day forecast for the city</returns>
+        WeatherDto GetForecast(string city);
     }
 }

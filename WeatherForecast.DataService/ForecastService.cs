@@ -9,10 +9,17 @@ using System.Linq;
 
 namespace WeatherForecast.DataService
 {
+    /// <summary>
+    /// <see cref="IForecastService"/>
+    /// </summary>
     public class ForecastService : IForecastService
     {
         private readonly IDataServiceConfiguration dataServiceConfiguration;
 
+        /// <summary>
+        /// Creates a new instance of the ForecastService
+        /// </summary>
+        /// <param name="configuration">The data service configuration that specifies the external weather forecast api endpoint</param>
         public ForecastService(IDataServiceConfiguration configuration)
         {
             if (configuration == null) throw new ArgumentNullException(nameof(configuration));
@@ -20,28 +27,14 @@ namespace WeatherForecast.DataService
             dataServiceConfiguration = configuration;
         }
 
-        public string GetData()
+        /// <summary>
+        /// <see cref="IForecastService.GetForecast(string)"/>
+        /// </summary>
+        public WeatherDto GetForecast(string city)
         {
             using (var httpClient = new HttpClient())
             {
-                var result = httpClient.GetAsync(string.Format(dataServiceConfiguration.UrlTemplate, "London", "UK", dataServiceConfiguration.ApiKey)).Result;
-
-                if (result.IsSuccessStatusCode)
-                {
-                    var jsonString = result.Content.ReadAsStringAsync().Result;
-                    var weatherData = JsonConvert.DeserializeObject<RootObject>(jsonString);
-                    return jsonString;
-                }
-
-                return "";
-            }
-        }
-
-        public WeatherDto GetForecast(string city, string country)
-        {
-            using (var httpClient = new HttpClient())
-            {
-                var result = httpClient.GetAsync(string.Format(dataServiceConfiguration.UrlTemplate, city, country, dataServiceConfiguration.ApiKey)).Result;
+                var result = httpClient.GetAsync(string.Format(dataServiceConfiguration.UrlTemplate, city, dataServiceConfiguration.ApiKey)).Result;
 
                 if (result.IsSuccessStatusCode)
                 {

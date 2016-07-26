@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿/*The statically typed version of the external weather service output*/
+
+using System.Collections.Generic;
 
 namespace WeatherForecast.DataService.ExternalDataContract
 {
