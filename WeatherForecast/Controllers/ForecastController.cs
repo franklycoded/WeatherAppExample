@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Web.Http;
 using WeatherForecast.DataService;
-using WeatherForecast.DataService.DataContracts;
 
 namespace WeatherForecast.Controllers
 {
@@ -19,9 +18,19 @@ namespace WeatherForecast.Controllers
 
         [HttpGet]
         [Route("{city}")]
-        public WeatherDto GetForecast(string city)
+        public IHttpActionResult GetForecast(string city)
         {
-            return _forecastService.GetForecast(city);
+            if (string.IsNullOrWhiteSpace(city)) return BadRequest("The City parameter cannot be empty!");
+            if (city.Length > 50) return BadRequest("The City parameter cannot be longer than 50 characters!");
+
+            try
+            {
+                return Ok(_forecastService.GetForecast(city));
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
         }
     }
 }
