@@ -59,6 +59,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Cache\ForecastCacheTests.cs" />
     <Compile Include="External\ExternalApiServiceTests.cs" />
     <Compile Include="ForecastServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

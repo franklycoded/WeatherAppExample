@@ -19,5 +19,10 @@
         /// Gets the icon path template
         /// </summary>
         string IconPathTemplate { get; }
+
+        /// <summary>
+        /// Gets the amount of minutes the weather data is cached for a city
+        /// </summary>
+        int CacheIntervalMinutes { get; }
     }
 }

@@ -37,6 +37,7 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cache\ForecastCache.cs" />
+    <Compile Include="Cache\IForecastCache.cs" />
     <Compile Include="Configuration\DataServiceConfiguration.cs" />
     <Compile Include="Configuration\IDataServiceConfiguration.cs" />
     <Compile Include="DataContracts\DailyWeatherDto.cs" />

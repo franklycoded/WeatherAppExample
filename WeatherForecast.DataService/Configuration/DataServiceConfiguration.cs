@@ -59,5 +59,17 @@ namespace WeatherForecast.DataService.Configuration
                 return this["iconPathTemplate"].ToString();
             }
         }
+
+        /// <summary>
+        /// <see cref="IDataServiceConfiguration.CacheIntervalMinutes" />
+        /// </summary>
+        [ConfigurationProperty("cacheIntervalMinutes", IsRequired = true)]
+        public int CacheIntervalMinutes
+        {
+            get
+            {
+                return Convert.ToInt32(this["cacheIntervalMinutes"]);
+            }
+        }
     }
 }
