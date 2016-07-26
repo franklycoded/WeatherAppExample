@@ -1,0 +1,2 @@
+cd ../WebUI
+gulp build

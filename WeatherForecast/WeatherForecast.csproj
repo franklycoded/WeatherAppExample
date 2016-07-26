@@ -214,7 +214,7 @@
     <Content Include="WebUI\app\services\forecastService.js" />
     <Content Include="WebUI\app\weatherMain\weatherMain.js" />
     <Content Include="WebUI\gulpfile.js" />
-    <Content Include="WebUI\package.json" />
+    <Content Include="package.json" />
     <Content Include="WebUI\app\app.js" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Web.config">
@@ -252,6 +252,9 @@
       <Name>WeatherForecast.DataService</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="prebuild.bat" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -287,6 +290,13 @@
     <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
+  <PropertyGroup>
+    <PreBuildEvent>call "$(SolutionDir)WeatherForecast\prebuild.bat"</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
