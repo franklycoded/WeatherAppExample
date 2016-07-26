@@ -216,7 +216,6 @@
     <Content Include="WebUI\gulpfile.js" />
     <Content Include="WebUI\package.json" />
     <Content Include="WebUI\app\app.js" />
-    <Content Include="Views\Home\_Home.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Web.config">
       <SubType>Designer</SubType>
