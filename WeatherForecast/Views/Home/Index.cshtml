@@ -11,6 +11,7 @@
     <title>index</title>
 
     @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/weatherapp")
     
 </head>
 <body>
@@ -25,11 +26,5 @@
             <daily-forecast forecast="dailyForecast"></daily-forecast>
         </div>
     </div>
-
-    @Scripts.Render("~/WebUI/app/shared/scripts/angular.min.js")
-    @Scripts.Render("~/WebUI/app/app.js")
-    @Scripts.Render("~/WebUI/app/services/forecastService.js")
-    @Scripts.Render("~/WebUI/app/weatherMain/weatherMain.js")
-    @Scripts.Render("~/WebUI/app/directives/dailyForecast/dailyForecast.js")
 </body>
 </html>

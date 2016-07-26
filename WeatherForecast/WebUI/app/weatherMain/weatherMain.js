@@ -20,6 +20,8 @@ weatherApp.controller('WeatherMainController', ['$scope', 'forecastService', fun
                 console.log(error);
                 $scope.isErrorVisible = true;
                 $scope.errorMessage = "Error while getting weather data!";
+                $scope.weatherData = {};
+                $scope.isTitleVisible = false;
             });
         }
     }
