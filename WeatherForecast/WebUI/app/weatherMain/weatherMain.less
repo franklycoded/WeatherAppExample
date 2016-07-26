@@ -1,0 +1,41 @@
+﻿body {
+    padding-top: 100px;
+
+    & .weatherMainController {
+        margin: auto;
+        width: 80%;
+        font-family: Helvetica;
+
+        & .searchControl {
+            & .citySearch {
+                font-size: 20pt;
+                padding: 5px;
+                color: @weatherBlue;
+                float: left;
+                border-radius: 10px;
+                border-color: @weatherBlue;
+            }
+
+            & .forecastButton {
+                display: inline;
+                padding-left: 10px;
+                font-size: 30pt;
+                float: left;
+                cursor: pointer;
+                color: @weatherBlue;
+            }
+
+            &:after {
+                content: ".";
+                clear: both;
+                display: block;
+                visibility: hidden;
+            }
+        }
+
+        & .alert-danger {
+            padding: 5px;
+            font-size: 10pt;
+        }
+    }
+}

@@ -9,12 +9,19 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>index</title>
+
+    @*@Styles.Render("~/Content/styles.css")
+    @Styles.Render("~/bundles/bootstrap");*@
+    @Styles.Render("~/Content/css")
+    
 </head>
 <body>
-    <div ng-controller="WeatherMainController">
-        <input type="text" id="citySearch" maxlength="50" placeholder="City" ng-model="cityName" />
-        <button ng-click="getForecast()">Get Forecast</button>
-
+    <div class="weatherMainController" ng-controller="WeatherMainController">
+        <div class="searchControl">
+            <input type="text" class="citySearch" maxlength="50" placeholder="City" ng-model="cityName" />
+            <div title="Search" class="forecastButton glyphicon glyphicon-play-circle" ng-click="getForecast()"></div>
+        </div>
+        <p class="alert-danger" ng-show="isErrorVisible">{{errorMessage}}</p>
         <div ng-repeat="dailyForecast in weatherData.dailyWeatherList">
             <daily-forecast forecast="dailyForecast"></daily-forecast>
         </div>

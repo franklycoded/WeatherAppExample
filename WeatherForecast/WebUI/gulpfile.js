@@ -7,4 +7,11 @@ gulp.task('copyShared', function () {
             .pipe(gulp.dest('app/shared/scripts/'));
 });
 
-gulp.task('build', ['copyShared']);
+gulp.task('build-less', function () {
+    return gulp.src('./app/styles.less')
+                .pipe(less())
+    .pipe(gulp.dest('../Content/'));
+
+});
+
+gulp.task('build', ['copyShared', 'build-less']);

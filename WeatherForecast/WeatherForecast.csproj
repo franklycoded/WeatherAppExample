@@ -229,7 +229,6 @@
     <Content Include="WebUI\app\directives\dailyForecast\dailyForecast.html" />
     <Content Include="WebUI\app\directives\dailyForecast\dailyForecast.js" />
     <Content Include="WebUI\app\services\forecastService.js" />
-    <Content Include="WebUI\app\weatherMain\weatherMain.html" />
     <Content Include="WebUI\app\weatherMain\weatherMain.js" />
     <Content Include="WebUI\gulpfile.js" />
     <Content Include="WebUI\package.json" />
@@ -266,6 +265,8 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="WebUI\app\weatherMain\weatherMain.less" />
+    <Content Include="WebUI\app\styles.less" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

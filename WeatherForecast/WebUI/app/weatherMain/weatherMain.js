@@ -3,13 +3,22 @@
 weatherApp.controller('WeatherMainController', ['$scope', 'forecastService', function ($scope, forecastService) {
     $scope.cityName = "";
     $scope.weatherData = {};
+    $scope.errorMessage = "error message test";
+    $scope.isErrorVisible = false;
     $scope.getForecast = function () {
-        console.log("get forecast for " + $scope.cityName);
+        $scope.isErrorVisible = false;
 
-        forecastService.getForecast($scope.cityName)
+        if ($scope.cityName != null && $scope.cityName != "") {
+            forecastService.getForecast($scope.cityName)
             .then(function (weatherData) {
                 console.log(weatherData);
                 $scope.weatherData = weatherData.data;
+            },
+            function (error) {
+                console.log(error);
+                $scope.isErrorVisible = true;
+                $scope.errorMessage = "Error while getting weather data!";
             });
+        }
     }
 }]);
