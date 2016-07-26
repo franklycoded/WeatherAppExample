@@ -267,6 +267,7 @@
     </Content>
     <Content Include="WebUI\app\weatherMain\weatherMain.less" />
     <Content Include="WebUI\app\styles.less" />
+    <Content Include="WebUI\app\directives\dailyForecast\dailyForecast.less" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

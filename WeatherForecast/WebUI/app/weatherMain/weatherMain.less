@@ -3,17 +3,17 @@
 
     & .weatherMainController {
         margin: auto;
-        width: 80%;
+        width: 1000px;
         font-family: Helvetica;
 
         & .searchControl {
             & .citySearch {
                 font-size: 20pt;
                 padding: 5px;
-                color: @weatherBlue;
+                color: @darkred;
                 float: left;
                 border-radius: 10px;
-                border-color: @weatherBlue;
+                border-color: @baseColor;
             }
 
             & .forecastButton {
@@ -22,7 +22,11 @@
                 font-size: 30pt;
                 float: left;
                 cursor: pointer;
-                color: @weatherBlue;
+                color: @darkGrey;
+
+                &:hover {
+                    color: @darkred;
+                }
             }
 
             &:after {
@@ -36,6 +40,12 @@
         & .alert-danger {
             padding: 5px;
             font-size: 10pt;
+            display: none;
+        }
+
+        & .cityTitle {
+            font-size: 30pt;
+            padding-top: 10px;
         }
     }
 }

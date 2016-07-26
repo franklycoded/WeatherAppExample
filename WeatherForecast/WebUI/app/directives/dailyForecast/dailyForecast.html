@@ -1,3 +1,6 @@
-﻿<div>
-    <p><img src="{{forecast.iconPath}}" /><span>{{forecast.dayName}} - {{forecast.shortDescription}}</span></p>
+﻿<div class="dailyForecast">
+    <p class="dayName">{{forecast.dayName}}</p>
+    <p class="icon"><img src="{{forecast.iconPath}}" /></p>
+    <p class="midday">{{forecast.middayTemperature}} &deg;C</p>
+    <p class="description">{{forecast.shortDescription}}</p>
 </div>

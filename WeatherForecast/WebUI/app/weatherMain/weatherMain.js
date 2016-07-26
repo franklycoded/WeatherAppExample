@@ -5,14 +5,16 @@ weatherApp.controller('WeatherMainController', ['$scope', 'forecastService', fun
     $scope.weatherData = {};
     $scope.errorMessage = "error message test";
     $scope.isErrorVisible = false;
+    $scope.isTitleVisible = false;
+
     $scope.getForecast = function () {
         $scope.isErrorVisible = false;
 
         if ($scope.cityName != null && $scope.cityName != "") {
             forecastService.getForecast($scope.cityName)
             .then(function (weatherData) {
-                console.log(weatherData);
                 $scope.weatherData = weatherData.data;
+                $scope.isTitleVisible = true;
             },
             function (error) {
                 console.log(error);
