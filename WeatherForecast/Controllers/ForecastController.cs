@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Web.Http;
 using WeatherForecast.DataService;
 
@@ -18,14 +19,14 @@ namespace WeatherForecast.Controllers
 
         [HttpGet]
         [Route("{city}")]
-        public IHttpActionResult GetForecast(string city)
+        public async Task<IHttpActionResult> GetForecast(string city)
         {
             if (string.IsNullOrWhiteSpace(city)) return BadRequest("The City parameter cannot be empty!");
             if (city.Length > 50) return BadRequest("The City parameter cannot be longer than 50 characters!");
 
             try
             {
-                return Ok(_forecastService.GetForecast(city));
+                return Ok(await _forecastService.GetForecastAsync(city));
             }
             catch (Exception ex)
             {

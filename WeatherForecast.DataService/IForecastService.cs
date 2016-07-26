@@ -1,4 +1,5 @@
-﻿using WeatherForecast.DataService.DataContracts;
+﻿using System.Threading.Tasks;
+using WeatherForecast.DataService.DataContracts;
 
 namespace WeatherForecast.DataService
 {
@@ -12,6 +13,6 @@ namespace WeatherForecast.DataService
         /// </summary>
         /// <param name="city">The city we are interested in</param>
         /// <returns>The multi-day forecast for the city</returns>
-        WeatherDto GetForecast(string city);
+        Task<WeatherDto> GetForecastAsync(string city);
     }
 }
