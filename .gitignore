@@ -210,3 +210,6 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
+
+WeatherForecast/Content/styles.css
+WeatherForecast/WebUI/app/shared
